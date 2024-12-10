@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.eb3732dd.css",
+    "main.js": "/static/js/main.ae05a4a4.js",
+    "static/media/heavyrain.jpg": "/static/media/heavyrain.3e01ed99e8f963a236b7.jpg",
+    "static/media/contact.png": "/static/media/contact.af7c0adb5c778861119b.png",
+    "static/media/bridgecollapse.jpg": "/static/media/bridgecollapse.275cf86b783845499d38.jpg",
+    "static/media/flood.jpg": "/static/media/flood.6f865a31d8ac0f13838d.jpg",
+    "static/media/solution.jpeg": "/static/media/solution.605f319481863eb3a6bc.jpeg",
+    "static/media/mission.jpeg": "/static/media/mission.581f5116aa31258b5a97.jpeg",
+    "static/media/why.jpeg": "/static/media/why.58691bf30168cb86015e.jpeg",
+    "static/media/phailin.jpg": "/static/media/phailin.f56130ee1faca19e2709.jpg",
+    "index.html": "/index.html",
+    "main.eb3732dd.css.map": "/static/css/main.eb3732dd.css.map",
+    "main.ae05a4a4.js.map": "/static/js/main.ae05a4a4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eb3732dd.css",
+    "static/js/main.ae05a4a4.js"
+  ]
+}
