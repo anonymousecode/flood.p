@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Sketch&display=swap');
+.divcontainer {
+    
+    font-family:  "Rubik", sans-serif;
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+  }
+  
+  .row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    gap: 20px; /* Uniform gap between grid items */
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .box {
+    width: 100%; /* Ensure the select element takes full width of the column */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  .button-28 {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .button-28:hover {
+    background-color: #0056b3;
+  }
+  
