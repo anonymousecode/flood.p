@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Sketch&display=swap');
+
+/* Styling for the header */
+.Header {
+    display: flex;
+    grid-template-areas: 'logo nav';
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2f89ff; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a slight shadow */
+}
+
+/* Styling for the navigation */
+.Nav {
+    display: flex;
+    grid-template-columns: repeat(4, auto);
+    align-items: center;
+    justify-items: center;
+    padding-right: 20px;
+    font-family:  "Rubik", sans-serif;
+}
+.nav-nav{
+    display: flex;
+    justify-content: flex-end;
+}
+/* Links in the navigation */
+.Nav .nav-item {
+    text-decoration: none;
+    font-weight: bold;
+    list-style: none;
+}
+
+/* Styling for smaller screens */
+@media (max-width: 768px) {
+    .Header {
+        grid-template-areas:
+            'logo'
+            'nav';
+        text-align: center;
+    }
+
+    .Nav {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .Nav .nav-item {
+        padding: 10px;
+        width: 100%;
+    }
+}
+
+.logo{
+    margin-left: 0;
+    padding-left: 20px;
+    font-family: "Londrina Sketch", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 35px;
+    color: #fff;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s, background-color 0.3s;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 5px;
+    
+    list-style: none;
+}
+
+.nav-link:hover{
+    color: black;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}

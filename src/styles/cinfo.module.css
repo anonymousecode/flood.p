@@ -1,0 +1,52 @@
+/* Container styling */
+.divcontainer {
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    text-align: center;
+    font-family:  "Rubik", sans-serif;
+    width: 70%;
+    margin: 0 auto;
+    padding: 10px;
+  }
+  
+  /* Heading styling */
+  .h1 {
+    text-align: center;
+    color: #000;
+    font-size: 70px;
+    margin-bottom: 1rem;
+  }
+  
+  /* Paragraph styling */
+  .p {
+    text-align: center;
+    color: #555;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+ 
+ .cimage{
+        width: 500px; /* Adjust width as needed */
+        height: auto; /* Maintain aspect ratio */
+        align-items: center;
+ } 
+
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 600px) {
+    .divcontainer {
+      width: 90%;
+      padding: 15px;
+    }
+  
+    .h1 {
+      font-size: 2rem;
+    }
+  
+    .p {
+      font-size: 1rem;
+    }
+  }
+  

@@ -1,0 +1,14 @@
+.contact-container {
+    display: flex;
+    flex-direction: row; /* Align children in a row */
+    justify-content: space-between; /* Optional: Adds space between the two components */
+    align-items: flex-start; /* Align items at the top of the row */
+    gap: 20px; /* Space between the components */
+    padding: 26px;
+  }
+  
+  .contact-container  div {
+    flex: 1; /* Ensures that both components take up available space */
+    max-width: 50%; /* Adjust width as needed */
+  }
+  

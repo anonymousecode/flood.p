@@ -1,0 +1,66 @@
+.container {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    padding: 20px; /* Add some padding for spacing */
+    padding-left: 250px;
+  }
+  
+  .textContainer {
+    flex: 1; /* Allow text container to take available space */
+    font-family: "Rubik", sans-serif;
+    text-align: justify; /* Justify text alignment */
+    padding-right: 40px; /* Add padding to the right for spacing */
+  }
+  
+  .imageContainer {
+    flex: 1; /* Allow image container to take available space */
+    display: flex; /* Enable flexbox for centering */
+    justify-content: left; /* Center image horizontally */
+  }
+  
+  .image {
+    max-width: 60%; /* Set a max width for the image (adjust as needed) */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove bottom space in images */
+    border-radius: 15px; /* Add rounded corners to the image */
+  }
+  
+  h1 {
+    font-size: 70px; /* Adjust heading font size */
+    margin-bottom: 15px; /* Spacing below the heading */
+  }
+  
+  p {
+    font-size: 20px; /* Adjust paragraph font size */
+    margin-top: 0; /* Remove margin at the top */
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column; /* Stack elements vertically */
+      align-items: center; /* Center items */
+    }
+  
+    .textContainer {
+      padding-right: 0; /* Remove right padding for smaller screens */
+      text-align: center; /* Center text for smaller screens */
+    }
+  
+    .imageContainer {
+      padding-bottom: 20px; /* Add space below the image for smaller screens */
+    }
+  
+    h1 {
+      font-size: 40px; /* Reduce font size for smaller screens */
+    }
+  
+    p {
+      font-size: 16px; /* Adjust paragraph font size for readability */
+    }
+  
+    .image {
+      max-width: 80%; /* Adjust image size for smaller screens */
+    }
+  }
+  
