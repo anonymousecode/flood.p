@@ -8,7 +8,7 @@ function Cards() {
   return (
     <div className={Styles['card-container']}>
         <div className={Styles.card}>
-            <img src={bridge} alt="" />
+            <img src={bridge} alt="bridge" />
             <div class={Styles.container}>
                 <h3><b>BRIDGE COLLAPSES</b></h3> 
                 <p>A 50-metre section of the Howrah Bridge in Kolkata has broken away and is travelling downstream on the Hooghly River.</p> 
@@ -17,7 +17,7 @@ function Cards() {
         </div>
 
         <div className={Styles.card}>
-            <img src={phailin} alt="" />
+            <img src={phailin} alt="phailin" />
             <div class={Styles.container}>
                 <h3><b>PHAILIN RELIEF</b></h3> 
                 <p>Local NGOs and community groups in Delhi have organized a relief effort, sending over 5 Crores of aid to victims of the recent floods in Uttarakhand.</p> 
@@ -26,7 +26,7 @@ function Cards() {
         </div>
 
         <div className={Styles.card}>
-            <img src={rain} alt="" />
+            <img src={rain} alt="rain" />
             <div class={Styles.container}>
                 <h3><b>HEAVY RAIN</b></h3> 
                 <p>Due to heavy storms and floods, Chennai is experiencing one of the deadliest floods ever, causing the entire city to be submerged.</p> 
