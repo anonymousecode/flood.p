@@ -9,7 +9,7 @@ function Cinfo() {
         <p className={Styles.p}>We'd love to hear from you! Whether you have questions, 
           feedback, or need assistance, feel free to reach out. Our team is here to help you.
         </p>
-        <img src={cimage} className={Styles.cimage} />
+        <img src={cimage} className={Styles.cimage} alt='info' />
         
     </div>
   )
