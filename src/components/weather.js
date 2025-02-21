@@ -1,19 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Styles from '../styles/weather.module.css';
 
 const API_KEY = "1883ab9756a4bfeb543d59343f26ff94";
 
 function Weather() {
-  const [city, setCity] = useState("India"); // Displayed current city
-  const [inputCity, setInputCity] = useState("India"); // Input box value
+  const [city, setCity] = useState("Kochi"); // Displayed current city
+  const [inputCity, setInputCity] = useState("Kochi"); // Input box value
   const [weatherData, setWeatherData] = useState(null);
   const [forecastData, setForecastData] = useState([]);
-  
-  useEffect(() => {
-    getCityCoordinates(city);
-  }, [city]);
 
-  const getCityCoordinates = async (cityName) => {
+  const getCityCoordinates = useCallback(async (cityName) => {
     try {
       const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${API_KEY}`);
       const data = await response.json();
@@ -26,25 +22,47 @@ function Weather() {
     } catch (error) {
       alert("An error occurred while fetching the coordinates!");
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    getCityCoordinates(city);
+  }, [city, getCityCoordinates]);
 
   const getWeatherDetails = async (cityName, lat, lon) => {
     try {
-      const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}`);
+      const response = await fetch(
+        `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}`
+      );
       const data = await response.json();
-      const uniqueForecastDays = [];
-      const fiveDaysForecast = data.list.filter(forecast => {
-        const forecastDate = new Date(forecast.dt_txt).getDate();
-        if (!uniqueForecastDays.includes(forecastDate)) {
-          return uniqueForecastDays.push(forecastDate);
+  
+      // Object to store one forecast per day
+      const dailyForecastMap = {};
+  
+      data.list.forEach((forecast) => {
+        const date = new Date(forecast.dt_txt);
+        const day = date.toDateString(); // Get full date string
+        const hour = date.getHours();
+  
+        // If there's no entry for this day, or this one is closer to 12:00 PM, replace it
+        if (!dailyForecastMap[day] || Math.abs(hour - 12) < Math.abs(new Date(dailyForecastMap[day].dt_txt).getHours() - 12)) {
+          dailyForecastMap[day] = forecast;
         }
       });
-      setWeatherData(fiveDaysForecast[0]);
-      setForecastData(fiveDaysForecast.slice(1, 6));
+  
+      // Convert object values to array & ensure exactly 5 days
+      const fiveDaysForecast = Object.values(dailyForecastMap).slice(0, 5);
+  
+      setWeatherData(fiveDaysForecast[0]); // First day's weather as "current weather"
+      setForecastData(fiveDaysForecast.slice(1)); // Next 4 days as forecast
+  
     } catch (error) {
       alert("An error occurred while fetching the weather forecast!");
     }
   };
+  
+  
+  
+
 
   const handleSearch = () => {
     setCity(inputCity); // Update `city` only when searching
@@ -91,7 +109,7 @@ function Weather() {
             </div>
           </div>
           <div className={Styles['days-forecast']}>
-            <h2>5-day Forecast</h2>
+            <h2>Next Days</h2>
             <ul className={Styles['weather-cards']}>
               {forecastData.map((weatherItem, index) => (
                 <li key={index} className={Styles.card}>
